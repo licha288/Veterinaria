@@ -1,0 +1,55 @@
+.footer {
+	background-color: $colorPrincipal;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-areas: "redes contacto";
+	max-height: 200px;
+	justify-items: center;
+	align-items: center;
+	border-top: $colorSecundario 2px solid;
+	border-radius: 10px;
+
+    .footer-redes {
+	    grid-area: redes;
+	    width: 70%;
+	    text-align: center;
+
+        .footer-contacto {
+	        grid-area: contacto;
+	        width: 70%;
+	        text-align: center;
+
+            ul{
+	            list-style: none;
+
+                & li {
+	                border-bottom: $colorSecundario 1px solid;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and ( max-width: 990px) {
+
+	.footer-contacto {
+		grid-area: contacto;
+		text-align: start;
+		font-size: 12px;
+	}
+
+	.footer-redes {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (max-width: 520px) {
+
+	.footer-contacto {
+		font-size: 10px;
+	}
+
+	.footer-redes {
+		font-size: 10px;
+	}
+}

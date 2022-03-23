@@ -1,0 +1,99 @@
+
+
+/*ANIMACION DEL HEADER*/
+
+@mixin Animaciones( $animation-name, $animation-duration, $animation-timing-function, $animation-fill-mode, $animation-delay){
+	animation-name: $animation-name;
+	animation-duration: $animation-duration;
+	animation-timing-function: $animation-timing-function;
+	animation-fill-mode: $animation-fill-mode;
+	animation-delay: $animation-delay;
+}
+
+.botonUno{
+	@include Animaciones(navAnimation, 0.35s, ease-out, forwards, 0.4s);
+}
+
+.botonDos{
+	@include Animaciones(navAnimation, 0.35s, ease-out, forwards, 0.3s);
+}
+
+.botonTres{
+	@include Animaciones(navAnimation, 0.35s, ease-out, forwards, 0.2s);
+}
+
+.botonCuatro{
+	@include Animaciones(navAnimation, 0.35s, ease-out, forwards, 0.1s);
+}
+
+.botonCinco{
+	@include Animaciones(navAnimation, 0.35s, ease-out, forwards, 0);
+}
+
+/*ANIMACION DEL HEADER*/
+
+/*ANIMACION MAIN*/
+
+@keyframes navAnimation {
+	0% {
+		opacity: 0;
+		position: relative;
+		bottom: 100px;
+	}
+	100%{
+		opacity: 1;
+		bottom: 0px;
+		position: relative;
+	}
+}
+
+@keyframes logo {
+	from {
+		position: relative;
+		right: 100px;
+		opacity: 0;
+	}
+	to {
+		position: relative;
+		right: 0;
+		opacity: 1;
+	}
+}
+
+
+main {
+	@include Animaciones(mainTransition, 0.4s, ease-out, none, 0);
+}
+
+@keyframes mainTransition {
+	from {
+		opacity: 0.4;
+		position: relative;
+		top: 13px;
+	}
+
+	to {
+		opacity: 1;
+		position: relative;
+		top: 0;
+	}
+}
+
+/*ANIMACION MAIN*/
+
+/*ANIMACION CARTA INDEX*/
+
+.section-consejos:hover {
+	@include Animaciones(cartaCreciente, 0.5s, ease, forwards, 0);
+}
+
+@keyframes cartaCreciente {
+	from {
+
+	}
+	to {
+		transform: scale(1.03);
+	}
+}
+
+/*ANIMACION CARTA INDEX*/
