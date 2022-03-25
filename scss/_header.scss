@@ -9,8 +9,7 @@
 	background-color: $colorPrincipal;
     
     .header-imagen {
-	    height: 65px;
-	    width: 65px;
+		width: 270px;
 	    margin: 0px 45px;
 	    padding-top: 10px;
 	    animation-name: logo;
@@ -23,7 +22,7 @@
         img {
 	        max-width: 100%;
 	        border: $colorSecundario 2px solid;
-	         border-radius: 3px;
+	         border-radius: 20px;
         }
     }
 
