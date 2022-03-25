@@ -93,6 +93,7 @@
 
 			& img {
 				max-width: 50%;
+				@extend .border;
 			}
 		}
 

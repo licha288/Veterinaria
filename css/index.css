@@ -162,7 +162,7 @@ main {
       align-items: center;
       justify-content: space-around; } }
 
-.border, .main-index .index-intro h1, .main-index .index-intro p, .main-index .index-consejos .section-consejos, .main-index .index-noticia, .main-turnos .turnos-banner, .main-turnos .turnos-banner img, .main-alimentos .section-perro, .main-alimentos .section-gato, .main-contacto .main-form .input-container, .main-info .main-ul .ul-li {
+.border, .main-index .index-intro h1, .main-index .index-intro p, .main-index .index-consejos .section-consejos, .main-index .index-noticia, .main-index .index-noticia .noticias-img img, .main-turnos .turnos-banner, .main-turnos .turnos-banner img, .main-alimentos .section-perro, .main-alimentos .section-gato, .main-contacto .main-form .input-container, .main-info .main-ul .ul-li {
   border: #10576a 2px solid;
   border-radius: 10px; }
 
