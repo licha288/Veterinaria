@@ -6,40 +6,45 @@
 
 /* EMPIEZA MAIN DE INDEX */
 
+
 .main-index {
 	display: grid;
 	grid-template-columns: 50% 50%;
-	grid-template-rows: 170px 415px 370px;
+	grid-template-rows: 69vh 70vh 55vh;
 	grid-template-areas: "Titulo Titulo"
 						 "carta carta"
 						 "noticia noticia";
 	justify-items: center;
 	align-items: center;
+	margin: 30px 0;
 
 	.index-intro {
-		background-color: transparent;
+		background-color: $colorPrincipal;
 		grid-area: Titulo; 
 		display: flex;
-		flex-direction: column;
 		align-items: center;
-		margin: 18px 0px;
+		justify-content: space-evenly;
+		height: 80%;
+
+		img {
+			max-width: 45%;
+		}
 
 		 h1 {
-			background-color: $colorPrincipal;
 			padding: 2px 0;
-			font-weight: 200;
-			width: 70%;
+			font-weight: 600;
+			font-size: 45px;
+			font-family: 'Lora', serif;
+			color: $compoundPink1;
 			text-align: center;
-			@extend .border;
+			width: 30%;
 		}
 
 		 p{
-			background-color: $colorPrincipal;
-			margin-top: 20px;
-			@extend .border;
 			padding: 9px 0;
-			width: 90%;
 			text-align: center;
+			font-family: 'Lora', serif;
+			width: 40%;
 		}
 
 	}
@@ -73,39 +78,36 @@
 				background-color: transparent;
 				text-align: center;
 				margin-top: 5px;
+				font-family: 'Lora', serif;
 			}
 		}
 	}
+
+
 	.index-noticia {
 		display: flex;
 		background-color: $colorPrincipal;
 		grid-area: noticia;
-		justify-content: center;
 		align-items: center;
 		@extend .border;
 		margin: 25px 0;
 
-		.noticias-img{
-			max-width: 50%;
-			padding: 10px;
-			display: flex;
-			justify-content: center;
 
 			& img {
-				max-width: 50%;
-				@extend .border;
+				max-width: 28%;
+				padding: 10px;
+				margin: auto;
 			}
-		}
+		
 
 		& p {
 			padding: 20px 17px;
 			text-align: center;
 			max-width: 50%;
-
+			font-family: 'Lora', serif;
 		}
 	}
 }
-
 
 @media only screen and (max-width: 990px) {
 	.main-index {
@@ -115,23 +117,29 @@
 							 "carta"
 							 "noticia";
 
+		.index-intro {
+			flex-direction: column;
+			height: auto;
+
+			img {
+				margin: 15px 0;
+				min-width: 300px;
+			}
+
+			p {
+				width: 80%;
+			}
+		}
+							 
+
 		.index-consejos {
 			flex-direction: column;
 			align-items: center;
 
 			.section-consejos {
 				margin: 10px;
-
-				.index-intro h1 {
-					font-size: 20px;
-					padding: 5px;
-				}
-			
-				.index-intro p {
-					padding: 9px 20px;
-					margin-top: 5px;
-					font-size: 15px;
-				}
+				height: 350px;
+				width: 220px;
 			}
 		}
 
@@ -139,18 +147,38 @@
 			flex-direction: column;
 			margin-bottom: 25px;
 			width: 80%;
+			height: 450px;
+			overflow: auto;
 
-			.noticias-img {
-				padding: 0;
-
-				img {
-					max-width: 80%;
-					padding: 10px;
-				}
+			img {
+				padding: 10px;
+				max-width: 50%;
 			}
 			p {
 				max-width: 85%;
 				padding: 10px 7px;
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 500px) {
+
+	.main-index{
+
+		.index-intro {
+
+			img {
+				min-width: 240px;
+			}
+		}
+
+		.index-noticia {
+
+
+			img {
+				max-width: 75%;
 			}
 		}
 	}
@@ -185,17 +213,19 @@
 	        display: flex; 
 	        flex-direction: column;
 	        justify-content: space-evenly;
-	        margin: 30px 0;
+	        margin: 40px 0;
 
             & h2 {
 	            align-self: center;
 	            font-weight: 200;
-	            font-size: 30px;
+	            font-size: 33px;
             }
 
             & p {
 	            text-align: center;
-            	font-size: 20px;
+            	font-size: 21.5px;
+				margin: 0 15px;
+				font-family: 'Lora', serif;
             }
         }
     }           
@@ -266,115 +296,89 @@
 
 .main-alimentos {
 	display: grid;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: auto auto;
 	row-gap: 10px;
 	margin: 10px 5px 50px 5px;
 
 	.section-perro {
-		display: grid;
-		grid-template-rows: 60px 290px;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-areas: "titulo1 titulo1 titulo1"
-							 "imagen1 imagen2 imagen3";
-		justify-items: center;
+		display: flex;
+		flex-direction: column;
 		@extend .border;
 		padding: 3px;
 
 		.h2-perro {
 			font-weight: 400;
 			grid-area: titulo1;
-			margin: auto;
+			margin: 15px auto;
 			border-bottom: $colorSecundario 2px solid;
-			border-bottom-left-radius: 3px;
-			border-bottom-right-radius: 3px;	
 		}
 
-		.perro-imagenes {
-			width: 250px;
-			margin: 0 auto auto auto;
+		.contenedor-img {
+			display: flex;
+			justify-content: space-evenly;
 
-			&:hover {
-				@include Animaciones(cartaCreciente, 0.5s, ease, forwards, 0);
+			.perro-imagenes {
+				width: 250px;
+				margin: 10px 0;
+
+				&:hover {
+					@include Animaciones(cartaCreciente, 0.5s, ease, forwards, 0);
+				}
+
+				& img {
+					max-width: 100%;
+					border: $colorSecundario 2px solid;
+					border-radius: 5px;
+				}
+
+				.h3-alimentos {
+					text-align: center;
+					background-color: transparent;
+					border: $colorSecundario 2px solid;
+					border-radius: 4px;
+				}
 			}
-
-			& img {
-				max-width: 100%;
-				border: $colorSecundario 2px solid;
-				border-radius: 5px;
-			}
-
-			.h3-alimentos {
-				text-align: center;
-				background-color: transparent;
-				border: $colorSecundario 2px solid;
-				border-radius: 4px;
-			}
-		}
-
-		.perro-imgUno{
-			grid-area: imagen1;
-		}
-		
-		.perro-imgDos{
-			grid-area: imagen2;
-		}
-		
-		.perro-imgTres{
-			grid-area: imagen3;
 		}
 	}
 
 	.section-gato {
- 		display: grid;
- 		grid-template-rows: 60px 290px;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-areas: "titulo2 titulo2 titulo2"
-							 "img1 img2 img3";
-		justify-content: center;
+		display: flex;
+		flex-direction: column;
 		@extend .border;
 		padding: 3px;
 		
 		.h2-gato {
 			font-weight: 400;
-			grid-area: titulo2;
-			margin: auto;
+			margin: 15px auto;
 			border-bottom: $colorSecundario 2px solid;
-			border-bottom-left-radius: 3px;
-			border-bottom-right-radius: 3px;
 		}
 
-		.gato-imagenes {
-			width: 250px;
-			margin: 0 auto auto auto;
+		
+		.contenedor-img {
+			display: flex;
+			justify-content: space-evenly;
+
+			.gato-imagenes {
+				width: 250px;
+				margin: 10px 0;
 			
-			&:hover {
-				@include Animaciones(cartaCreciente, 0.5s, ease, forwards, 0);
-			}
+				&:hover {
+					@include Animaciones(cartaCreciente, 0.5s, ease, forwards, 0);
+				}
 
-			& img {
-				max-width: 100%;
-				border: $colorSecundario 2px solid;
-				border-radius: 5px;
-			}
+				& img {
+					max-width: 100%;
+					border: $colorSecundario 2px solid;
+					border-radius: 5px;
+				}
 
-			.h3-alimentos {
-				text-align: center;
-				background-color: transparent;
-				border: $colorSecundario 2px solid;
-				border-radius: 4px;
+				.h3-alimentos {
+					text-align: center;
+					background-color: transparent;
+					border: $colorSecundario 2px solid;
+					border-radius: 4px;
+				}
 			}
-		}
-
-		.gato-imgUno{
-			grid-area: img1;
-		}
-		
-		.gato-imgDos{
-			grid-area: img2;
-		}
-		
-		.gato-imgTres{
-			grid-area: img3;
 		}
 	}
 }
@@ -382,30 +386,27 @@
 @media only screen and (max-width: 990px){
 
 	.section-perro {
-		grid-template-rows: 0.2fr 1fr 1fr 1fr;
-		grid-template-columns: 100%;
-		grid-template-areas: "titulo1"
-							 "imagen1" 
-							 "imagen2" 
-							 "imagen3";
+		
 
-		 .perro-imagenes {
-			width: 210px;
-			margin: 5px auto auto auto;
+		.miss-img {
+			opacity: 0;
+			position: absolute;
 		}
 	}
 	.section-gato {
-		grid-template-rows: 0.2fr 1fr 1fr 1fr;
-		grid-template-columns: 100%;
-		grid-template-areas: "titulo2"
-							 "img1" 
-							 "img2" 
-							 "img3";
 
-		 .gato-imagenes {
-			width: 210px;
-			margin: 5px auto auto auto;
-		}		
+		.miss-img {
+			opacity: 0;
+			position: absolute;
+		}
+
+	}
+}
+
+@media only screen and (max-width: 620px){
+	.contenedor-img {
+		flex-direction: column;
+		align-items: center;
 	}
 }
 
@@ -420,17 +421,17 @@
 	align-items: center;
 
 	.main-form {
-		background-color: $colorPrincipal;
+		background-color: $compoundPink1;
 		display: flex; 
 		justify-content: space-evenly;
 		align-items: center;
 		width: 75%;
 		height: 350px;
-		border: $colorSecundario 2px solid;
+		border: none 2px solid;
 		border-radius: 15px;
 
 		.input-container {
-			background-color: $colorSecundario;
+			background-color: $complementary4;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -438,7 +439,7 @@
 			height: 300px;
 			width: 40%;
 			@extend .border;
-			margin: 10px;
+			margin: 0 20px;
 
 			.form-input {
 				padding: 7px;
@@ -452,6 +453,10 @@
 					height: 30px;
 					width: 100%;
 					padding: 4px;
+
+					&::placeholder {
+						color: #333;
+					}
 				}
 			
 				& textarea {
@@ -461,11 +466,15 @@
 					padding: 5px;
 					width: 100%;
 					resize: none;
+
+					&::placeholder {
+						color: #333;
+					}
 				}
 			}
 
 			.submit {
-				background-color: $colorPrincipal;
+				background-color: $complementary4;
 				border-radius: 3px;
 				padding: 5px;
 				border: #0f4d5e 1px solid;
@@ -473,7 +482,8 @@
 		}
 
 		img {
-			max-width: 100%;
+			max-width: 50%;
+			margin: 0 auto;
 			border: $colorSecundario 2px solid;
 			border-radius: 20px;
 		}
@@ -487,15 +497,16 @@
 
 		.main-form {
 			flex-direction: column-reverse;
-			height: auto;
+			height: 500px;
 
 			.input-container {
-				width: 70%;
+				min-width: 70%;
+
 			}
-			.img-container {
-				width: 70%;
-				height: auto;
-				margin-top: 8px;
+
+			img {
+				margin-top: 7px;
+				min-width: 60%;
 			}
 		}
 	}

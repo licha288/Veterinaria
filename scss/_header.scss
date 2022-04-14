@@ -4,13 +4,13 @@
 	margin: 8px auto;
 	display: grid;
 	grid-row: auto auto;
-	border: $colorSecundario 2px solid;
+	box-shadow: $shadow4 0px 1px 4px;
 	border-radius: 10px;
-	background-color: $colorPrincipal;
+	background-color: $complementary4;
     
     .header-imagen {
-		width: 270px;
-	    margin: 0px 45px;
+		width: 220px;
+		margin: 0 45px;
 	    padding-top: 10px;
 	    animation-name: logo;
 	    animation-duration: 0.5s;
@@ -21,8 +21,9 @@
 
         img {
 	        max-width: 100%;
-	        border: $colorSecundario 2px solid;
-	         border-radius: 20px;
+	        border-radius: 20px;
+			object-fit: cover;
+			box-shadow: $shadow4 0px 1px 4px;
         }
     }
 
@@ -40,25 +41,25 @@
 	        padding: 5px 25px;
 	        border-radius: 5px;
 	        align-self: center;
-	        width: 51%;
+			width: 51%;
 
             .menu-boton {
-	            margin: auto;
 	            padding: 7px 12px;
 	            border-radius: 4px;
-	            border: $colorSecundario 1px solid;
 	            opacity: 0;
+				background-color: $compoundPink1;
+				box-shadow: $shadow4 0px 1px 4px;
 
     
                 &:hover {
-	                background-color: $colorSecundario;
-	                color: white;
+	                background-color: $compoundPink2;
 	                transition: 0.2s;
                 }
 
                     & a {
                     background-color: transparent;
                     text-decoration: none;
+	                color: #333;
                 }
             }
         }
@@ -70,6 +71,10 @@
 	.header {
 		justify-items: center;
 
+		.header-imagen {
+			margin: 0;
+		}
+
         .nav {
 		    justify-content: center;
 		    margin-top: 5px;
@@ -77,6 +82,7 @@
 
             .nav-ul{
 	    	    width: 80%;
+				padding: 0;
 	        }
 	    }
 	}
@@ -87,10 +93,17 @@
 	.nav {
 		margin: 10px 0 5px 0;
 
+		.header-imagen {
+			margin: 0;
+		}
+
         .nav-ul {
 		    flex-direction: column;
 		    align-items: center;
-		    justify-content: space-around;
+
+			.menu-boton {
+				padding: 3px;
+			}
 	    }
 	}
 }
